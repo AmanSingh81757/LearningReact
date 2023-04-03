@@ -1,8 +1,8 @@
 import './App.css';
 import { Hello } from './components/Welcome'; // if the imported component is not imported as default use this syntax to import
 import Greets from './components/Greets'; // else if the imported component is imported as default use this way
-import { useState, useSyncExternalStore } from 'react';
-
+import { useEffect, useState, useSyncExternalStore } from 'react';
+import { Text } from './components/Text';
 
 
 // We can use components inside othe components the User component is described below and used in the App component here
@@ -137,4 +137,59 @@ function App7(){
   )
 }
 
-export default App7;
+
+function App8(){
+  const [showText, setShowText] = useState(false);
+// Useeffect is used in this component go to text.js to see
+  return (
+    <div className='App8'>
+      <button onClick={()=>setShowText(!showText)}>Show Text</button>
+      {showText && <Text />}
+    </div>
+  )
+}
+
+
+
+function App9(){
+
+  const [catFact, setCatFact] = useState("");
+
+  useEffect(()=>{
+    const URL = "https://catfact.ninja/fact";
+    fetch(URL).then((response)=>response.json()).then((data)=>{
+      setCatFact(data.fact);
+    })
+  },[])
+
+
+
+  return (
+    <div className='App9'>
+      <button>Cat Fact</button>
+      <p>{catFact}</p>
+    </div>
+  )
+}
+
+
+function App10(){
+  const [name, setName] = useState("");
+  const [predictedAge, setPredictedAge] = useState(NaN);
+  const fetchAge=()=>{
+    const URL = `https://api.agify.io/?name=${name}`;
+    fetch(URL).then((response)=>response.json().then((data)=>{
+      setPredictedAge(data.age);
+    }))
+  }
+
+  return (
+    <div className='App10'>
+      <input placeholder='Enter name' onChange={(e)=>setName(e.target.value)}></input>
+      <button onClick={fetchAge}>Predict Age</button>
+
+      <h2> Predocted Age: {predictedAge}</h2>
+    </div>
+  )
+}
+export default App10;
