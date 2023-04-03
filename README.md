@@ -1,4 +1,4 @@
-# Repository for learnign react
+# Repository for learning react
 ## Explanation of each concept is in comments before every component
 ## the repo will be upadted regularly as I learn new concepts
 
