@@ -1,3 +1,8 @@
+# Repository for learnign react
+## Explanation of each concept is in comments before every component
+## the repo will be upadted regularly as I learn new concepts
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
