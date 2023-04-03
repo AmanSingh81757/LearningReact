@@ -3,7 +3,10 @@ import { Hello } from './components/Welcome'; // if the imported component is no
 import Greets from './components/Greets'; // else if the imported component is imported as default use this way
 import { useEffect, useState, useSyncExternalStore } from 'react';
 import { Text } from './components/Text';
-
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Home } from './Pages/Home';
+import { Menu } from './Pages/Menu';
+import { Contacts } from './Pages/Contacts';
 
 // We can use components inside othe components the User component is described below and used in the App component here
 function App() {
@@ -192,4 +195,19 @@ function App10(){
     </div>
   )
 }
-export default App10;
+
+
+function App11(){
+  return (
+    <div className='App11'>
+      <Router>
+        <Routes>
+          <Route path='/' element={<Home />}/>
+          <Route path='/menu' element={<Menu />}/>
+          <Route path='/contacts' element={<Contacts />}/>
+        </Routes>
+      </Router>
+    </div>
+  )
+}
+export default App11;
