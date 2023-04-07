@@ -1,11 +1,11 @@
 import './App.css';
 import { Hello } from './components/Welcome'; // if the imported component is not imported as default use this syntax to import
 import Greets from './components/Greets'; // else if the imported component is imported as default use this way
-import { useEffect, useState, useSyncExternalStore } from 'react';
+import { useEffect, useState, createContext } from 'react';
 import { Text } from './components/Text';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Home } from './Pages/Home';
-import { Menu } from './Pages/Menu';
+import { Profile } from './Pages/Profile';
 import { Contacts } from './Pages/Contacts';
 
 // We can use components inside othe components the User component is described below and used in the App component here
@@ -197,17 +197,28 @@ function App10(){
 }
 
 
+
+
+
 function App11(){
+
+  const [userName, setUserName] = useState("amansingh81757");
+
   return (
     <div className='App11'>
       <Router>
         <Routes>
-          <Route path='/' element={<Home />}/>
-          <Route path='/menu' element={<Menu />}/>
-          <Route path='/contacts' element={<Contacts />}/>
+          <Route path='/' element={<Home userName={userName}/>}/>
+          <Route path='/profile' element={<Profile userName={userName} setUserName={setUserName}/>}/>
+          <Route path='/contacts' element={<Contacts userName={userName} />}/>
         </Routes>
       </Router>
     </div>
   )
 }
+
+function App12(){
+
+}
+
 export default App11;
