@@ -8,6 +8,7 @@ import { Home } from './Pages/Home';
 import { Profile } from './Pages/Profile';
 import { Contacts } from './Pages/Contacts';
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { Navbar } from './components/Navbar';
 
 // We can use components inside othe components the User component is described below and used in the App component here
 function App() {
@@ -248,6 +249,7 @@ function App13() {
     <div className='App11'>
       <QueryClientProvider>
         <Router>
+          <Navbar />
           <Routes>
             <Route path='/' element={<Home />} />
             <Route path='/profile' element={<Profile />} />
