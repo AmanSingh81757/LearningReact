@@ -220,14 +220,14 @@ function App11() {
 }
 
 function App12() {
-  const client = new QueryClient();
 
   const [userName, setUserName] = useState("amansingh81757");
 
   return (
     <App12Context.Provider value={{ userName, setUserName }}>
-      <div className='App11'>
+      <div className='App12'>
         <Router>
+          <Navbar />
           <Routes>
             <Route path='/' element={<Home />} />
             <Route path='/profile' element={<Profile />} />
@@ -246,7 +246,7 @@ function App13() {
 
 
   return (
-    <div className='App11'>
+    <div className='App13'>
       <QueryClientProvider>
         <Router>
           <Navbar />
