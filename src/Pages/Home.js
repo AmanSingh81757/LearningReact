@@ -1,5 +1,6 @@
 import { useContext } from "react"
 import { App12Context } from "../App"
+import { useQuery } from "@tanstack/react-query";
 
 
 export const Home=()=>{
