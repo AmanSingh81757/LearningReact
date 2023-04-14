@@ -225,7 +225,7 @@ function App12() {
 
   return (
     <App12Context.Provider value={{ userName, setUserName }}>
-      //this prevents prop drilling and the states can now be accessed from every component which is the children of APP 12 component
+      {/* //this prevents prop drilling and the states can now be accessed from every component which is the children of APP 12 component */}
       <div className='App12'>
         <Router>
           <Navbar />
@@ -245,12 +245,12 @@ function App12() {
 // react query for data fetching
 
 function App13() {
+
   const client = new QueryClient();
 
-
   return (
-    <div className='App13'>
-      <QueryClientProvider>
+    <div className='App12'>
+      <QueryClientProvider client = {client}>
         <Router>
           <Navbar />
           <Routes>

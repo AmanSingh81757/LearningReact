@@ -5,12 +5,11 @@ import { useQuery } from "@tanstack/react-query";
 
 export const Home=()=>{
 
-    const { userName } = useContext(App12Context);
+    const {} = useQuery(["cat"], );
 
     return (
         <div>
             <h1>This is the home page</h1>
-            <h1>Your username is {userName}</h1>
         </div>
     )
 }
